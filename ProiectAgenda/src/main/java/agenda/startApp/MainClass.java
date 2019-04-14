@@ -109,7 +109,7 @@ public class MainClass {
 		}
 	}
 
-	private static void adaugActivitate(RepositoryActivity activityRep,
+	public static void adaugActivitate(RepositoryActivity activityRep,
 										RepositoryContact contactRep, BufferedReader in, User user) {
 		try {
 			System.out.printf("Adauga Activitate: \n");
@@ -160,9 +160,15 @@ public class MainClass {
 			Activity act = new Activity(user.getName(), start, end,
 					contacts, description);
 
-			activityRep.addActivity(act);
+			if (activityRep.addActivity(act))
+			{
 
-			System.out.printf("S-a adugat cu succes\n");
+				System.out.printf("S-a adugat cu succes\n");
+			}
+			else
+			{
+				System.out.println("Conflict");
+			}
 		} catch (IOException e) {
 			System.out.printf("Eroare de citire: %s\n" + e.getMessage());
 		}
