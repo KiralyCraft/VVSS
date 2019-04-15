@@ -52,6 +52,22 @@ public class ContactF01BBT
         {
             assertTrue(true);
         }
+
+        rep.addContact(toAdd);
+        Contact c = rep.getByName("F");
+        if (c.getName().equals("F"))
+        {
+            assertTrue(true);
+        }
+        if (c.getTelefon().equals("ABCDEFGHIJLKMNO")){
+
+            assertTrue(false);
+        }
+        else
+        {
+            assertTrue(true);
+        }
+
     }
     @Test
     public void testF01ECPV2()
@@ -69,6 +85,7 @@ public class ContactF01BBT
         try
         {
             toAdd.setName("0");
+            assertTrue(true);
 
         }
         catch (InvalidFormatException e)
@@ -82,6 +99,26 @@ public class ContactF01BBT
 
         }
         catch (InvalidFormatException e)
+        {
+            assertTrue(true);
+        }
+
+
+        rep.addContact(toAdd);
+        Contact c = rep.getByName("0");
+        if (c.getName().equals("0"))
+        {
+            assertTrue(true);
+        }
+        else
+        {
+            assertTrue(false);
+        }
+        if (c.getTelefon().equals("44")){
+
+            assertTrue(false);
+        }
+        else
         {
             assertTrue(true);
         }
@@ -101,11 +138,12 @@ public class ContactF01BBT
         }
         try
         {
-            toAdd.setName("Eureka");
+            toAdd.setName("A.B.C");
+            assertTrue(false);
         }
         catch (InvalidFormatException e)
         {
-            assertTrue(false);
+            assertTrue(true);
         }
         try
         {
@@ -114,6 +152,18 @@ public class ContactF01BBT
 
         }
         catch (InvalidFormatException e)
+        {
+            assertTrue(false);
+        }
+
+
+        rep.addContact(toAdd);
+        Contact c = rep.getByName("A.B.C");
+        if (c == null)
+        {
+            assertTrue(true);
+        }
+        else
         {
             assertTrue(false);
         }
@@ -133,7 +183,8 @@ public class ContactF01BBT
         }
         try
         {
-            toAdd.setName("01234565");
+            toAdd.setName("A.B");
+            assertTrue(true);
         }
         catch (InvalidFormatException e)
         {
@@ -146,6 +197,25 @@ public class ContactF01BBT
 
         }
         catch (InvalidFormatException e)
+        {
+            assertTrue(false);
+        }
+
+        rep.addContact(toAdd);
+        Contact c = rep.getByName("A.B");
+        if (c.getName().equals("A.B"))
+        {
+            assertTrue(true);
+        }
+        else
+        {
+            assertTrue(false);
+        }
+        if (c.getTelefon().equals("0746309058"))
+        {
+            assertTrue(true);
+        }
+        else
         {
             assertTrue(false);
         }
@@ -182,6 +252,26 @@ public class ContactF01BBT
         {
             assertTrue(false);
         }
+
+
+        rep.addContact(toAdd);
+        Contact c = rep.getByName("0123456");
+        if (c.getName().equals("0123456"))
+        {
+            assertTrue(true);
+        }
+        else
+        {
+            assertTrue(false);
+        }
+        if (c.getTelefon().equals("0123456"))
+        {
+            assertTrue(true);
+        }
+        else
+        {
+            assertTrue(false);
+        }
     }
     @Test
     public void testF01BVA2()
@@ -212,6 +302,26 @@ public class ContactF01BBT
 
         }
         catch (InvalidFormatException e)
+        {
+            assertTrue(true);
+        }
+
+
+        rep.addContact(toAdd);
+        Contact c = rep.getByName("0123456");
+        if (c.getName().equals("0123456"))
+        {
+            assertTrue(true);
+        }
+        else
+        {
+            assertTrue(false);
+        }
+        if (c.getTelefon().equals("123456"))
+        {
+            assertTrue(false);
+        }
+        else
         {
             assertTrue(true);
         }
@@ -248,6 +358,18 @@ public class ContactF01BBT
         {
             assertTrue(true);
         }
+
+
+        rep.addContact(toAdd);
+        Contact c = rep.getByName("A.B.C");
+        if (c != null)
+        {
+            assertTrue(false);
+        }
+        else
+        {
+            assertTrue(true);
+        }
     }
     @Test
     public void testF01BVA4()
@@ -278,6 +400,18 @@ public class ContactF01BBT
 
         }
         catch (InvalidFormatException e)
+        {
+            assertTrue(true);
+        }
+
+
+        rep.addContact(toAdd);
+        Contact c = rep.getByName("1.2.3");
+        if (c != null)
+        {
+            assertTrue(false);
+        }
+        else
         {
             assertTrue(true);
         }

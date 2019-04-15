@@ -144,6 +144,7 @@ public class MainClass {
 			String contUsername;
 			do
 			{
+				System.out.println("Introdu username:");
 				contUsername = in.readLine();
 				Contact cont;
 				if ((cont = contactRep.getByName(contUsername))!=null)
@@ -155,7 +156,7 @@ public class MainClass {
 					System.out.println("Usernameul nu exista");
 				}
 
-			}while(contUsername.length()==0);
+			}while(contUsername.length()!=0);
 
 			Activity act = new Activity(user.getName(), start, end,
 					contacts, description);

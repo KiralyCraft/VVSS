@@ -111,23 +111,25 @@ public class RepositoryActivityFile implements RepositoryActivity{
 	public List<Activity> activitiesByName(String name) {
 		List<Activity> result1 = new LinkedList<Activity>();
 		for (Activity a : activities)
-			if (a.getName().equals(name) == false) result1.add(a);
-		List<Activity> result = new LinkedList<Activity>();
-		while (result1.size() >= 0 )
-		{
-			Activity ac = result1.get(0);
-			int index = 0;
-			for (int i = 1; i<result1.size(); i++)
-				if (ac.getStart().compareTo(result1.get(i).getStart())<0) 
-				{
-					index = i;
-					ac = result1.get(i);
-				}
-			
-			result.add(ac);
-			result1.remove(index);
-		}
-		return result;
+			if (a.getName().equals(name) == true) result1.add(a);
+
+		return result1;
+//		List<Activity> result = new LinkedList<Activity>();
+//		while (result1.size() >= 1 )
+//		{
+//			Activity ac = result1.get(0);
+//			int index = 0;
+//			for (int i = 1; i<result1.size(); i++)
+//				if (ac.getStart().compareTo(result1.get(i).getStart())<0)
+//				{
+//					index = i;
+//					ac = result1.get(i);
+//				}
+//
+//			result.add(ac);
+//			result1.remove(index);
+//		}
+//		return result;
 	}
 
 	@SuppressWarnings("deprecation")
