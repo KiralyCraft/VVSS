@@ -25,14 +25,17 @@ import agenda.model.repository.interfaces.RepositoryUser;
 //F02.	 programarea unor activitati (denumire, descriere, data, locul, ora inceput, durata, contacte).
 //F03.	 generarea unui raport cu activitatile pe care le are utilizatorul (nume, user, parola) la o anumita data, ordonate dupa ora de inceput.
 
-public class MainClass {
-
+public class MainClass
+{
+	public static RepositoryContact contactRep;
+	public static RepositoryUser userRep;
+	public static RepositoryActivity activityRep;
 	public static void main(String[] args) {
 		BufferedReader in = null;
 		try {
-			RepositoryContact contactRep = new RepositoryContactFile();
-			RepositoryUser userRep = new RepositoryUserFile();
-			RepositoryActivity activityRep = new RepositoryActivityFile(
+			contactRep = new RepositoryContactFile();
+			userRep = new RepositoryUserFile();
+			activityRep = new RepositoryActivityFile(
 					contactRep);
 
 			User user = null;
@@ -80,8 +83,8 @@ public class MainClass {
 		System.out.println("Program over and out\n");
 	}
 
-	private static void afisActivitate(RepositoryActivity activityRep,
-			BufferedReader in, User user) {
+	public static void afisActivitate(RepositoryActivity activityRep,
+									  BufferedReader in, User user) {
 		try {
 			System.out.printf("Afisare Activitate: \n");
 			System.out.printf("Data(format: mm/dd/yyyy): ");
