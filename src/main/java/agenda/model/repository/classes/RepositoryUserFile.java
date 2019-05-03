@@ -15,7 +15,7 @@ import agenda.model.repository.interfaces.RepositoryUser;
 public class RepositoryUserFile implements RepositoryUser{
 
 	private List<User> users;
-	private static final String filename = "files"+File.separator+"users.txt";
+	private static final String filename = "files/users.txt";
 	
 	public RepositoryUserFile() throws Exception 
 	{
