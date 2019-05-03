@@ -19,6 +19,7 @@ public class RepositoryContactFile implements RepositoryContact {
 	private List<Contact> contacts;
 
 	public RepositoryContactFile() throws Exception {
+		;
 		contacts = new LinkedList<Contact>();
 		BufferedReader br = null;
 //		String currentDir = new File(".").getAbsolutePath();

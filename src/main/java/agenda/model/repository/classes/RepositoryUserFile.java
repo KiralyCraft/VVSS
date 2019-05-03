@@ -19,6 +19,7 @@ public class RepositoryUserFile implements RepositoryUser{
 	
 	public RepositoryUserFile() throws Exception 
 	{
+		;
 		users = new LinkedList<User>();
 		BufferedReader br = null;
 		try {

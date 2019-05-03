@@ -21,6 +21,7 @@ public class RepositoryActivityFile implements RepositoryActivity{
 	
 	public RepositoryActivityFile(RepositoryContact repcon) throws Exception
 	{
+		;
 		activities = new LinkedList<Activity>(); 
 		//DateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm");
 		BufferedReader br = null;
